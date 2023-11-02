@@ -1,35 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:uni/Screens/homepage.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("LOGIN PAGE"),
-        centerTitle: true,
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const TextField(
+      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        const SizedBox(
+          height: 25,
+        ),
+        const Icon(
+          Icons.lock,
+          size: 60,
+        ),
+        const SizedBox(
+          height: 25,
+        ),
+        const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: TextField(
+            obscureText: false,
             textAlign: TextAlign.center,
             decoration: InputDecoration(
               hintText: "Username",
               border: OutlineInputBorder(),
             ),
           ),
-          const TextField(
+        ),
+        const SizedBox(
+          height: 1,
+        ),
+        const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: TextField(
+            obscureText: true,
             textAlign: TextAlign.center,
             decoration: InputDecoration(
               hintText: "Password",
               border: OutlineInputBorder(),
             ),
           ),
-          ElevatedButton(onPressed: () {}, child: const Text("LOGIN"))
-        ],
-      ),
+        ),
+        const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text("forgot password?"),
+            ],
+          ),
+        ),
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Homepage()));
+            },
+            child: const Text("LOGIN")),
+      ]),
     );
   }
 }
