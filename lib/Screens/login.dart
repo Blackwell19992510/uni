@@ -7,6 +7,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 180, 235, 182),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         const SizedBox(
           height: 25,
@@ -14,12 +15,13 @@ class Login extends StatelessWidget {
         const Icon(
           Icons.lock,
           size: 60,
+          color: Colors.green,
         ),
         const SizedBox(
           height: 25,
         ),
         const Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(14.0),
           child: TextField(
             obscureText: false,
             textAlign: TextAlign.center,
@@ -30,10 +32,10 @@ class Login extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 1,
+          height: 0,
         ),
         const Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(14.0),
           child: TextField(
             obscureText: true,
             textAlign: TextAlign.center,
@@ -44,7 +46,7 @@ class Login extends StatelessWidget {
           ),
         ),
         const Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(14.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -52,12 +54,21 @@ class Login extends StatelessWidget {
             ],
           ),
         ),
-        ElevatedButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const Homepage()));
-            },
-            child: const Text("LOGIN")),
+        SizedBox(
+          height: 50,
+          width: 270,
+          child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                textStyle:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              ),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Homepage()));
+              },
+              child: const Text("LOGIN")),
+        ),
       ]),
     );
   }
