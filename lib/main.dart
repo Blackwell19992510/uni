@@ -11,7 +11,7 @@ import 'package:uni/Screens/search.dart';
 import 'package:uni/Screens/settings.dart';
 import 'package:uni/Screens/splashscreen.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
